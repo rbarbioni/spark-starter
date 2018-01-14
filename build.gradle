@@ -1,0 +1,30 @@
+group 'br.com.rbarbioni'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "br.com.rbarbioni.spark.Application"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "com.mashape.unirest:unirest-java:1.4.9"
+    compile "com.sparkjava:spark-core:2.7.1"
+    compile "com.google.code.gson:gson:2.8.2"
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+
+
+}
