@@ -1,6 +1,13 @@
 # Spark-Starter-Project
 Spark Framewok Demo and Start Project
 
+- Java 8
+- Jetty Server;
+- Gson;
+- SLF4j;
+- Junit;
+- UniRest Client;
+
 ### HOW-TO-BUILD
 
 ```
